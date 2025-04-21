@@ -6,12 +6,12 @@
   "framework": "nextjs",
   "builds": [
     {
-      "src": "package.json",
+      "src": "next.config.js",
       "use": "@vercel/next"
     }
   ],
   "env": {
-    "NEXT_PUBLIC_SUPABASE_URL": "@next_public_supabase_url",
-    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "@next_public_supabase_anon_key"
+    "NEXT_PUBLIC_SUPABASE_URL": "https://qjtzrvtjmgblddqxxzjv.supabase.co",
+    "NEXT_PUBLIC_SUPABASE_ANON_KEY": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InFqdHpydnRqbWdibGRkcXh4emp2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDUyMDEyMjMsImV4cCI6MjA2MDc3NzIyM30.Y95kVpdIGQ_khM1zU91e29NC722wRM_GbN9fME7D_yA"
   }
 } 
