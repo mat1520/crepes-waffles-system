@@ -2,6 +2,13 @@ import { createClient } from '@/lib/supabase'
 
 export default async function Home() {
   const supabase = createClient()
+  
+  // Ejemplo de consulta a Supabase
+  const { data: stats } = await supabase
+    .from('stats')
+    .select('*')
+    .limit(3)
+    .single()
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -19,7 +26,17 @@ export default async function Home() {
 
       <div className="relative flex place-items-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {/* Aquí irán los componentes principales */}
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-lg">
+            <h2 className="text-2xl font-semibold mb-4">Estado del Sistema</h2>
+            <p className="text-gray-600 dark:text-gray-300">
+              Conectado a Supabase exitosamente
+            </p>
+            {stats && (
+              <pre className="mt-4 p-4 bg-gray-100 dark:bg-gray-900 rounded">
+                {JSON.stringify(stats, null, 2)}
+              </pre>
+            )}
+          </div>
         </div>
       </div>
     </main>
